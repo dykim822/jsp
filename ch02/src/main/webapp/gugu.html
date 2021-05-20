@@ -1,0 +1,36 @@
+<!-- radio를 이용해 2~9단 선택 후 num변수에 담아 보내면 
+	Gugu.java에서 해당하는 구구단을 웹으로 보내는 프로그램 작성-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="common.css">
+</head>
+<body>
+	<form action="Gugu">
+		<table>
+			<caption>구구단 선택</caption>
+			<tr>
+				<th>숫자 선택</th>
+				<td>
+					<!-- <label for="g2">2</label>
+					<input type="radio" name="num" value="2" id="g2" checked="checked"><br> -->
+					<!-- 디폴트로 2단에 체크되게 checked 사용 -->
+					<label><input type="radio" name="num" value="2" checked="checked">2</label>
+					<label><input type="radio" name="num" value="3">3</label>
+					<label><input type="radio" name="num" value="4">4</label>
+					<label><input type="radio" name="num" value="5">5</label>
+					<label><input type="radio" name="num" value="6">6</label>
+					<label><input type="radio" name="num" value="7">7</label>
+					<label><input type="radio" name="num" value="8">8</label>
+					<label><input type="radio" name="num" value="9">9</label>				
+				</td>
+			</tr>
+			<tr>
+				<th colspan="2"><input type="submit" value="확인"></th>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

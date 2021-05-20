@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="common.css">
+<script type="text/javascript">
+	function chk() {
+		if(frm.password.value != frm.confirmPass.value) {
+			alert('암호가 일치하지 않습니다');
+			frm.password.focus();	//커서를 password에 갖다 놓는 메서드
+			frm.password.value = "";	// 현재 입력한 암호를 지운다
+			return false;	// action에 있는 submit 명령을 취소
+		}
+		if(frm.job[frm.job.selectedIndex].value == "기타") {
+			if(frm.job2.value == "") {
+				alert("직업을 입력하세요");
+				frm.job2.focus();
+				return false;
+			}
+		} else {
+			frm.job[frm.job.selectedIndex].value = frm.job2.value;
+		}
+	}
+</script>
+</head>
+<body>
+	<!-- onsubmit; submit할 때 chk()함수를 실행하고 결과를 확인해 action 실행을 결정한다 -->
+	<form action="Member" method="post" name="frm" onsubmit="return chk()">
+		<table>
+			<caption>회원가입</caption>
+			<tr>
+				<th>이름</th>
+				<td>
+					<input type="text" name="name" required="required" autofocus="autofocus">
+				</td>
+			</tr>
+			<tr>
+				<th>아이디</th>
+				<td>
+					<input type="text" name="id" required="required">
+				</td>
+			</tr>
+			<tr>
+				<th>암호</th>
+				<td>
+					<input type="password" name="password" required="required">
+				</td>
+			</tr>
+			<tr>
+				<th>암호확인</th>
+				<td>
+					<input type="password" name="confirmPass" required="required">
+				</td>
+			</tr>
+			<tr>
+				<th>성별</th>
+				<td>
+					<label><input type="radio" name="gender" value="남자">남자</label><br>
+					<label><input type="radio" name="gender" value="여자" checked="checked">여자</label>
+				</td>
+			</tr>
+			<tr>
+				<th>메일수신</th>
+				<td>
+					<label><input type="checkbox" name="email" value="공지">공지</label><br>
+					<label><input type="checkbox" name="email" value="광고">광고</label><br>
+					<label><input type="checkbox" name="email" value="배송">배송</label>
+				</td>
+			</tr>
+			<tr>
+				<th>직업</th>
+				<td>
+					<select name="job">
+						<option>회사원
+						<option>수강생
+						<option>기타
+					</select>
+					<input type="text" name="job2">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="submit" value="확인">
+					<input type="reset" value="초기화">
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

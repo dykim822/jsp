@@ -1,0 +1,34 @@
+<!-- 좋아하는 영화 배트맨, 아이언맨, 슈퍼맨, 앤트맨, 스파이더맨
+checkbox로 변수명 movie -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	@import url("common.css");
+</style>
+</head>
+<body>
+	<form action="Movie" method="post">
+		<table>
+			<tr>
+				<th>좋아하는 영화</th>
+				<td>
+					<!-- <label for="m1">배트맨</label>
+					<input type="checkbox" name="movie" id="m1" value="배트맨"> -->
+					<!-- label을 써줘야 글자클릭 시 체크 가능/ 체크박스는 multiple 생략 가능 -->
+					<label><input type="checkbox" name="movie" value="배트맨">배트맨</label><br>
+					<label><input type="checkbox" name="movie" value="아이언맨">아이언맨</label><br>
+					<label><input type="checkbox" name="movie" value="슈퍼맨">슈퍼맨</label><br>
+					<label><input type="checkbox" name="movie" value="앤트맨">앤트맨</label><br>
+					<label><input type="checkbox" name="movie" value="스파이더맨">스파이더맨</label>
+				</td>
+			</tr>
+			<tr>
+				<th colspan="2"><input type="submit" value="확인"><input type="reset" value="초기화"></th>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
