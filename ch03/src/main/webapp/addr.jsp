@@ -1,0 +1,35 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	@import url("common.css");
+</style>
+</head>
+<body>
+	<form action="addrResult.jsp" method="post">
+		<table>
+			<caption>이름과 주소</caption>
+			<tr>
+				<th>이름</th>
+				<td>
+					<input type="text" name="name" required="required" autofocus="autofocus">
+				</td>
+				<th>주소</th>
+				<td>
+					<input type="text" name="addr" required="required">
+				</td>
+			</tr>
+			<tr>
+				<th colspan="4">
+					<input type="submit" value="확인">
+					<input type="reset" value="초기화">
+				</th>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
