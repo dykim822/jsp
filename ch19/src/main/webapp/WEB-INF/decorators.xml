@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/decorator">
+	<decorator name="main" page="hello_decorator.jsp">
+		<pattern>/hello/*</pattern>
+	</decorator>
+	<decorator name="news" page="/decorator/news_decorator.jsp">
+		<pattern>/news/*</pattern>
+	</decorator>
+	<decorator name="top" page="/decorator/topLayout.jspf">
+		<pattern>/test/*</pattern>
+	</decorator>
+	<decorator name="bottom" page="/decorator/bottomLayout.jspf">
+		<pattern>/test/*</pattern>
+	</decorator>
+	<excludes>
+		<pattern>/hello/exclude.jsp</pattern>
+		<pattern>/news/exclude.jsp</pattern>
+	</excludes>
+</decorators>
