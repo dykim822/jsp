@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="noticens">
+	<resultMap type="notice" id="noticeResult">
+		<result property="n_num" 		column="n_num" />
+		<result property="m_id"   		column="m_id" />
+		<result property="n_subject"   	column="n_subject" />
+		<result property="n_content" 	column="n_content" />
+		<result property="n_reg_date"   column="n_reg_date" />
+	</resultMap>
+	
+	<!-- 타입이 대문자(String)면 객체, 소문자(string)면 문자라는 뜻 -->
+	<select id="select" parameterType="String" resultType="notice">	
+		select * from notice where id = #{id}
+	</select>
+	
+	<insert id="insert" parameterType="notice">
+		insert into notice values (#{id},#{password},#{name},#{address},#{tel},sysdate,sysdate,'n')
+	</insert>
+	
+	<update id="update" parameterType="notice">
+		update notice set password=#{password}, name=#{name}, address=#{address}, tel=#{tel}, update_date=sysdate where id=#{id} 
+	</update>
+	
+	<delete id="delete" parameterType="string">
+		update notice set del='y' where id=#{id}
+	</delete>
+</mapper>
